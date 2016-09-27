@@ -1,0 +1,218 @@
+---
+layout: post
+title: 数据挖掘中心第一次报告：常用知识介绍
+date: 2013-10-15 21:16:11.000000000 +08:00
+type: post
+published: true
+status: publish
+categories:
+- 未分类
+tags: []
+meta:
+  _edit_last: '303819'
+  _wp_old_slug: a-tour-of-the-knowlyou-must-know
+  _thumbnail_id: '39'
+  _hide_PageLinesShareBar: ''
+  simplecatch-sidebarlayout: ''
+  _jd_post_styling_mobile: ''
+  _jd_post_styling_print: ''
+  _jd_post_styling_screen: ''
+  _jd_style_this: ''
+  duoshuo_thread_id: '6218327600457057025'
+  colormag_page_layout: default_layout
+  _post_restored_from: a:3:{s:20:"restored_revision_id";i:42;s:16:"restored_by_user";i:303819;s:13:"restored_time";i:1448377513;}
+author:
+  login: admin
+  email: contact@rucdmc.net
+  display_name: admin
+  first_name: ''
+  last_name: ''
+excerpt: 这只是一次介绍性的报告，没有人可以在一个小时之内教会大家上面这么多内容，所以这篇文档中有大量的网址，感兴趣的同学可以自己看看，数据挖掘这一段比较火热，有不少人在研究，也有不少热心人将他们的心得与体会写在博客上或者论坛上，这些都是非常好的资源。
+---
+<p>报告人：陈昱</p>
+<h2>大纲</h2>
+<ul>
+<li>做数据挖掘最常用到的统计学和数学知识</li>
+<li>Linux系统相关</li>
+<li>Python语言</li>
+<li>网络数据的抓取</li>
+<li>远程连接Linux服务器</li>
+<li>数据库相关</li>
+<li>我做数据挖掘的流程</li>
+</ul>
+<p><!--more--></p>
+<p>这只是一次介绍性的报告，没有人可以在一个小时之内教会大家上面这么多内容，所以这篇文档中有大量的网址，感兴趣的同学可以自己看看，数据挖掘这一段比较火热，有不少人在研究，也有不少热心人将他们的心得与体会写在博客上或者论坛上，这些都是非常好的资源。</p>
+<p>如果你在报告之前得到了这篇文档，并且你对数据挖掘方面有什么疑问——比如对一些名词或者术语不理解，我刚参加的时候就不知道什么是有监督学习、什么是无监督学习，还以为是老师会不会push。。。 ——我会在第二部分开始之前尽量生动形象的介绍数据挖掘是做什么的，并且回答一些提问者的问题。</p>
+<h1>最常用到的统计学和数学知识（我觉得）</h1>
+<h2>MLE</h2>
+<p>Likelihood这个东西，我觉得不用说太多了。</p>
+<h2>Bayes方法</h2>
+<p>把Frequentist的所有机器学习算法，像linear(or logistic) regression,neural network,svm,Gaussian mixture model,Hidden markov model这些的前面加上一个Bayesian，你将会得到双倍种算法。只是解模型的方法不同，但是理解并写出这些Bayesian版本的算法，还是需要对Bayes方法有很深刻的了解的。</p>
+<h2>线性代数</h2>
+<p>把什么东西都放在空间的语言里面说，已经非常普遍了，熟练掌握基本的线性代数方法，对理解算法很有帮助。如果你想要自己编程实现算法，对这部分的要求会更高一些。</p>
+<h2>凸优化</h2>
+<p>冷艳高贵接地气的东西，会让你对算法的求解方式有更深刻的理解。</p>
+<h2>三种求值方法</h2>
+<ul>
+<li>梯度下降法</li>
+<li>坐标下降法</li>
+<li>牛顿法</li>
+</ul>
+<p>这三种方法贯穿了整个数据挖掘与机器学习。一方面看，这些方法可以解模型的方程，反过来看，一些模型的建立就是应用这些方法的思想。</p>
+<h1>数据挖掘的环境与工具</h1>
+<h2>操作系统</h2>
+<p>由于编程需要，建议使用Linux环境，一个流行的linux操作系统是Ubuntu，在http://www.ubuntu.com/可以下载它的iso版本，网上有很多安装双系统的方法。如果你不想安装双系统，那么通过虚拟机软件Vmware，你可以像安装一款应用软件一样安装操作系统，并且可以很方便的删除。</p>
+<h2>Shell编程</h2>
+<p>Shell的功能是控制操作系统的一种语言，相对于Kernel，Shell是外壳，是操作系统的最外层，也就是面向用户的，熟练地掌握几条Shell语句，可以大大的提高工作效率。 新建一个终端窗口的命令是ctrl+alt+t，新建一个终端标签页的命令是ctrl+shift+t，显示命令的使用方法可以用 man xxx。 下面列出几条常用的Shell命令</p>
+<ul>
+<li>文件路径相关cd、ls、du</li>
+<li>文件操作相关mkdir、mv、rm、cp、tar、cat、tail、head、sed、split、find</li>
+<li>文件编辑 nano、vim</li>
+<li>系统相关 top、ps、who、history、kill</li>
+<li>安装软件 apt-get</li>
+<li>终端正在运行的进程 ctrl+c</li>
+<li>百度搜linux 命令大全，会出现一个应用</li>
+</ul>
+<h2>连接服务器</h2>
+<p>服务器没有图形界面，所以一切操作都要命令行执行。 Linux环境下使用ssh工具，ubuntu自带openssh-client，推荐安装openssh-server，在终端下使用命令</p>
+<pre language="sh"><code>sudo apt-get install openssh-server</code></pre>
+<p>通过ssh工具来远程登录服务器进行操作，通过scp命令来远程传输文件。</p>
+<pre language="sh"><code>ssh username@host
+scp filename username@host:path</code></pre>
+<p>Windows下使用一款应用软件，Putty，Putty模拟linux环境的终端窗口，但此时传输文件需要点putty界面上面的按钮来实现。另一款比较好用的文件传输与管理的软件叫WinScp，模仿Windows的文件夹风格。</p>
+<p>服务器的操作与本机操作没有太大差别，但是服务器有比较严格的权限控制，可以通过ls -l命令来查看当前目录下面的权限控制。</p>
+<h1>Python</h1>
+<p>Python是我做数据挖掘任务时最常使用的语言，也是我认为最适合数据挖掘的语言，它在各个方面都有不错的表现，并且基于Python语言的数据挖掘和机器学习的资料也比较丰富，如果将来希望从事数据挖掘相关方面工作的同学应该学会使用Python语言。</p>
+<h2>安装</h2>
+<p>Linux和Mac系统中，python是内置语言，这两个系统的很多部分都是用python写的，所以不需要安装，Windows系统中，可以在http://www.python.org/getit/下载2.7X版本。因为python现在有两个主流版本，3.X和2.7X，语法上有些不同，我们要使用的是更主流的2.7版本。</p>
+<p>关于编译器，我推荐eclipse，eclipse是一款十分优秀的编译器，有很多贴心的设计和实用的功能，并且对大型项目的管理非常方便。eclipse支持几乎所有编程语言（包括R），eclipse也有Hadoop的插件，同时也有基于GPU的deep learning的相关模块，做并行项目的设计业非常方便。</p>
+<p>eclipse的安装需要java环境，Linux和Mac系统中内置了java环境，Windows需要额外安装，这部分网上的教程很多，也很简单。 关于eclipse的python插件的配置，可以参考http://www.jb51.net/article/34517.htm</p>
+<p>另一个优秀的交互式编译器是iPython，不做过多介绍</p>
+<h2>Python语法</h2>
+<p>Python语法以简洁著称，Python和R一样，是弱类型语言，所以在使用变量之前不需要声明他们。Python通过缩进来控制结构，所以没有一堆乱七八糟的大括号，四个空格或者一个tab用来代替大括号的作用。</p>
+<p>一个官方的入门教程http://docs.python.org/2/tutorial/</p>
+<p>一个非官方的入门教程http://learnpythonthehardway.org/book</p>
+<p>相关的资源可以在百度知道、新浪爱问、知乎等平台查到。</p>
+<p>报告时我也将展示一些基本的写法。</p>
+<h2>Python数据结构</h2>
+<p>Python的数据结构是比较有特色的，活用字典，列表两种数据结构有出人意料的威力。</p>
+<p>字典可以理解成封装好的hash表，可以非常方便的处理树形结构，&lt;key,value&gt;形的键值对。</p>
+<p>报告时我将会展示一些Python的数据结构在数据清理时的用法。</p>
+<h2>Python包的安装</h2>
+<p>Python有很多包，真的很多。</p>
+<p>最方便的安装方法是通过easy_install 和 pip 来一键安装，不过这两个是需要手动安装的。</p>
+<p>在这里可以找到绝大多数的包，可能需要手动安装，不过也非常简单，在linux下直接解压，进入目录，执行install什么的就行了。https://pypi.python.org/pypi</p>
+<p>Windows系统安装包会比较麻烦，有好心人在这个网站http://www.lfd.uci.edu/ gohlke/pythonlibs/上放了绝大多数的常用包，都是.exe格式的，直接下载双击就可以了。</p>
+<p>有两个包是做算法开发必备的包：Numpy 和 Scipy，提供了大量的数值运算和矩阵运算的方法，后者依赖前者。</p>
+<h2>Python网络爬虫</h2>
+<p>Python有着非常好的网络支持。我最常用的做网络爬虫的包是urllib2,re,Beautifulsoup,mechanize,后两个包需要额外的安装。urllib2是把网页源文件下载下来，re是做正则表达式，Beautifulsoup是解析HTML语言，mechanize是模拟浏览器操作，都是非常强大的包。</p>
+<p>我将演示怎样通过Python爬取网络中的数据</p>
+<pre language="python"><code>import urllib2
+f=urllib2.urlopen(&#39;http://military.people.com.cn/n/2013/0705/c1011-22087628.html&#39;)
+print f.read().lower()</code></pre>
+<p>解决乱码的问题，在头部加入</p>
+<pre language="python"><code>import sys
+reload(sys)
+sys.setdefaultencoding(&#39;utf8&#39;)</code></pre>
+<p>做一些文档提取，可以利用正则表达式，下面是一篇非常著名的教程，都可以当做工具书来使用了，这个网址我少说打开50次了 </p>
+<p>http://www.jb51.net/tools/zhengze.html</p>
+<p>下面这个网站可以做在线正则表达式的测试，也非常常用</p>
+<p>http://tool.chinaz.com/regex/</p>
+<p>一个简单的例子，去掉字符串中的空白字符：</p>
+<pre language="python"><code>p=re.compile(&quot;\s+&quot;)
+ns=re.sub(p,&#39;&#39;,s)
+print ns</code></pre>
+<p>下面这段代码利用了beautifulsoup进行解析HTML</p>
+<pre language="python"><code># -*- coding: utf-8 -*-
+import urllib2
+import sys,re
+from bs4 import BeautifulSoup
+reload(sys)
+sys.setdefaultencoding(&#39;utf8&#39;)
+f=urllib2.urlopen(&#39;http://military.people.com.cn/n/2013/0705/c1011-22087628.html&#39;)
+s=f.read().lower().decode(&#39;gbk&#39;)    
+soup = BeautifulSoup(s)
+print soup.title
+newstext=soup.find(id=&quot;p_content&quot;)
+ss=&#39;&#39;
+for item in str(newstext):
+    if item in r&#39;&#39;&#39;0123456789{}%abcdefghijklmnopqrstuvwxyz&#39;&lt;&gt;()?$+:&amp;;|#!/&quot;=-_.&#39;&#39;&#39;:
+        continue
+    ss+=item
+print ss</code></pre>
+<p>下面这段代码展示了mechanize的最简单的使用方法</p>
+<pre language="python"><code># -*- coding: utf-8 -*-
+import sys,string,types
+import mechanize
+file= open(&#39;list&#39;,&quot;rb&quot;);
+for name in file:
+    br = mechanize.Browser()        #br是模拟的浏览器
+    br.open(&#39;http://movie.douban.com/&#39;) #打开豆瓣电影页面
+    br.select_form(nr=0)        #选一个表
+    br.form[&#39;search_text&#39;]=name.decode(&#39;utf-8&#39;) #输入要查询的电影的名字
+    br.submit()             #提交
+    result = br.response()      #返回结果
+    linkss = [l for l in  br.links()] #把浏览器链接加入linkss列表中
+    rr = br.follow_link(linkss[21])   #点击搜索结果的第一条  这个21是尝试出来的，因为上面还有注册等等链接
+    ttt=&#39;&lt;span class=&quot;pl&quot;&gt;类型:&lt;/span&gt; &#39;  #手动找标签，也可以返回的源文件，用beautifulsoup解析
+    ss=rr.read().split(&#39;\n&#39;)
+    for line in ss:
+        if line.find(ttt)&gt;0:
+            print line
+    br.close()</code></pre>
+<p>下面这段代码展示了非常粗暴的通过正则表达式爬取网页表格类数据的方法，同样的程序稍加修改就可以应用到各种金融指数、政府网站上面的一些表格数据</p>
+<pre language="python"><code>#encoding=utf8
+from bs4 import BeautifulSoup
+f=open(&#39;out.txt&#39;,&#39;w&#39;)
+import re
+import urllib2
+for i in range(1,232):
+    page=str(i)
+    print page
+    htmltext = urllib2.urlopen(&#39;http://ctc.webtex.cn/market/table_list.asp?cid=731&amp;startdate=2001-1-1&amp;overdate=2013-9-22&amp;page=&#39;+page)
+    soup = BeautifulSoup(htmltext)
+    ss=soup.find(&#39;table&#39;,width=680,border=0,cellspacing=0,cellpadding=0)
+    ss=str(ss)
+    ptitle=&#39;&gt;.*?&lt;&#39;
+    result = re.findall(ptitle, ss)
+    for i in range(11):
+        del result[i]
+    for i in result:
+        if i==&#39;&gt;&lt;&#39;:continue
+        tt= i.replace(&#39;&gt;&#39;,&#39;&#39;).replace(&#39;&lt;&#39;,&#39;&#39;)
+        if tt==&#39;第一页&#39;:break
+        if tt==&#39;涨跌&#39;:continue
+        if tt==&#39;日 期&#39;:continue
+        print&gt;&gt;f, tt</code></pre>
+<p>注：tex里面listing代码比较长的那几行显示不全，我不知道怎么处理，我会同时上传.tex文件，大家可以在文件里面找到代码。</p>
+<h1>数据库</h1>
+<p>数据库是数据挖掘最基础的内容，组织数据是一门很深的学问，可惜我数据库方面不是很熟悉，这部分内容可能在报告中被略掉。</p>
+<h2>Mysql基础</h2>
+<p>人民大学统计学院在本科一年级开设了数据库的课程，所以基础的部分略去。不太熟悉的同学可以参考一些Mysql相关的教程，这里推荐一本《MYSQL核心技术手册》。</p>
+<h2>Mysql的Python接口</h2>
+<p>这里有一篇写的不错的博客。 http://www.cnblogs.com/rollenholt/archive/2012/05/29/2524327.html 我个人觉得用Python操作数据库可能还更容易，是通过MySQLdb这个包来实现的。数据库接口是一个Python对象，可以通过对象的execute方法进行数据库查询操作。</p>
+<h2>如果你不想使用数据库</h2>
+<p>请熟练掌握R或者Python的各种基础的操作，并对它们的速度了解清楚，自己在程序中设计数据结构，可以应付90%的情况，在数据量10G以下没什么问题。但无论如何，数据库是数据挖掘不可避免的话题。</p>
+<h1>数据挖掘任务的编程建议</h1>
+<ul>
+<li>模块化编程</li>
+<li>不要过早优化</li>
+<li>尽量和与你一同做数据挖掘的人使用同一种语言</li>
+<li>从小数据做起</li>
+<li>如果不是senior，请避免自己写算法，几乎每种算法发明者都会附上算法的代码，请去他们的博客上面找写好的代码。</li>
+</ul>
+<h1>动手操作的重要性</h1>
+<h2>将数据画出来</h2>
+<p>当你不知道该对这些数据做什么的时候。</p>
+<h2>考察算法的表现</h2>
+<ul>
+<li>与样本量的关系，样本量很小的时候模型是什么样，样本量很大的时候模型是什么样。</li>
+<li>样本量与维度之间的关系</li>
+<li>算法的速度</li>
+<li>算法的bias和variance</li>
+<li>算法的解释性</li>
+</ul>
+<h1>我做数据挖掘的一点经验</h1>
+<h1>我们的Hadoop集群</h1>
+<p>我会在报告的时候介绍一下我们的Hadoop集群，也会跟各位老师和同学讨论和使用集群计划。</p>
+<p>网盘下载地址： <a href="http://pan.baidu.com/s/15Rpt8" title="文章下载" target="_blank">http://pan.baidu.com/s/15Rpt8</a></p>

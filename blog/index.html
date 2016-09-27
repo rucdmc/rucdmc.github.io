@@ -1,0 +1,53 @@
+---
+layout: page
+title: 文章
+---
+
+
+{% for post in paginator.posts %}
+<div class="post">
+  <div class="title">
+    <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+    {% if post.date %}
+    <small>{{ post.date | date: "%Y 年 %m 月 %d 日" }} | 分类于
+    {% else %}
+    <small>某年 某月 某日 | 分类于
+    {% endif %}
+
+    </small>
+  </div><!-- END title -->
+  <div class="entry">
+    {{ post.content | split: '<!-- more -->' | first }}
+    <div class="clear"></div>
+  </div><!-- END entry -->
+  <p><a href="{{ site.baseurl }}{{ post.url }}">阅读全文→</a></p>
+</div><!-- END post -->
+<div class="deco-line"></div>
+{% endfor %}
+
+<!-- 分页链接 -->
+{% if paginator.total_pages > 1 %}
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
+  {% else %}
+    <span>&laquo; Prev</span>
+  {% endif %}
+
+  {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+      <em>{{ page }}</em>
+    {% elsif page == 1 %}
+      <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+    {% else %}
+      <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+    {% endif %}
+  {% endfor %}
+
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
+  {% else %}
+    <span>Next &raquo;</span>
+  {% endif %}
+</div>
+{% endif %}

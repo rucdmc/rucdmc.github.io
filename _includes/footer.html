@@ -1,0 +1,74 @@
+<footer>
+
+  <div class="container">
+		<div class="row">
+
+      <div class="col-sm-4">
+        <h4>联系我们</h4>
+    <p>新浪微博：人民大学统计学院数据挖掘中心</p>
+    <p>邮箱：contact@rucdmc.net</p>
+    <p>QQ群：193328096</p>
+    <p>微信公众号：rucdmc</p>
+       
+      </div>
+
+     <div class="col-sm-4 text-center">
+       <h4>官方微信</h4>
+       <img width="100px" src="http://7xktqo.com1.z0.glb.clouddn.com/wp-content/uploads/2014/10/DMC二维.jpg" alt="QR code">
+     </div>
+
+     <div class="col-sm-4 text-center">
+       <h4>官方微博</h4>
+       <iframe width="200" height="100" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=200&height=100&fansRow=2&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=0&isFans=0&uid=1869170057&verifier=44dd67f8&dpc=1"></iframe>
+     </div>
+
+    </div>
+  </div>
+
+
+  <div id="sub-footer">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="copyright">
+            <p>© RUCDMC 2016</p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="copyright">
+            <p class="text-right">主题修改自 <a href="http://bootstraptaste.com/sailor-free-bootstrap-theme/">Sailor</a> - <a href="http://bootstraptaste.com/">Bootstrap Themes</a> by BootstrapTaste</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+  $('body a').each(function(index, element) {
+    var href = $(this).attr('href');
+    if(href.indexOf('#') == 0) {
+    } else if(href.indexOf('/') == 0 || href.toLowerCase().indexOf('china-r.org') > -1 ) {
+    } else {
+      $(this).attr('target', '_blank');
+      $(this).addClass('external');
+    }
+  });
+});
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44956898-1', 'rucdmc.net');
+  ga('send', 'pageview');
+
+</script>

@@ -1,0 +1,25 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: 中国人民大学数据挖掘中心
+email: contact@rucdmc.net
+description: 中国人民大学数据挖掘中心是隶属于中国人民大学统计学院的学习、交流平台，鼓励并激励更多的学生参与统计分析、数据挖掘与商业智能应用的研究，促进倡导交叉学科的融合与合作。
+keywords: R语言, 数据科学，数据分析, 数据挖掘, 机器学习, 商业智能, 大数据
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://rucdmc.net" # the base hostname & protocol for your site
+
+qiniubaseurl: "http://7xs9ic.com1.z0.glb.clouddn.com"  # qiniu CDN speedup
+
+# Build settings
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+
+paginate: 5
+paginate_path: "blog/page:num"
+
+
