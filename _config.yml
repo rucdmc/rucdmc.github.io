@@ -12,7 +12,7 @@ description: 中国人民大学数据挖掘中心是隶属于中国人民大学�
 keywords: R语言, 数据科学，数据分析, 数据挖掘, 机器学习, 商业智能, 大数据
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://rucdmc.net" # the base hostname & protocol for your sitef
-adminemail: "fengchicrazy@163.com"
+adminemail: "814868906@qq.com"
 
 qiniubaseurl: "http://7xs9ic.com1.z0.glb.clouddn.com"  # qiniu CDN speedup
 
