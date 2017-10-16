@@ -1,0 +1,14 @@
+>报名时间截止10月13日22:00。</li>
+    <li>第一次(10月12日20:30)为试听课。</li>
+    <li>报名人数达到10人开班，若报名人数较多则按照报名先后顺序筛选。</li>
+    <li>报名且听课次数达到六次及以上发放证书以及小礼品。</li>
+</ol>
+
+<p>希望大家慎重报名，坚持下去，真正有所收获！</p>
+
+<p>心动的小伙伴快扫下方的二维码报名参加吧！</p>
+
+<div style="text-align:center;">
+<img src="{{site.baseurl}}{% link /img/files/wenjuan.png %}" height=300px width=300px />
+</div>
+
