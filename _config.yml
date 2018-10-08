@@ -14,8 +14,8 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://rucdmc.net" # the base hostname & protocol for your sitef
 adminemail: "814868906@qq.com"
 
-qiniubaseurl: "http://7xs9ic.com1.z0.glb.clouddn.com"  # qiniu CDN speedup
-
+#qiniubaseurl: "http://7xs9ic.com1.z0.glb.clouddn.com"  # qiniu CDN speedup
+qiniubaseurl: ""
 # Build settings
 markdown: kramdown
 permalink: /:year/:month/:day/:title/
