@@ -80,63 +80,63 @@
                 <td><input type="checkbox"/></td>
             </tr>
             <tr>
-                <th>冯艺超</th>
+                <td>冯艺超</td>
                 <td><input type="checkbox"/></td>
             </tr>
             <tr>
-                <th>刘畅</th>
+                <td>刘畅</td>
                 <td><input type="checkbox"/></td>
             </tr>
             <tr>
-                <th>吴迪</th>
+                <td>吴迪</td>
                 <td><input type="checkbox"/></td>
             </tr>
             <tr>
-                <th>刑晨</th>
+                <td>刑晨</td>
                 <td><input type="checkbox"/></td>
             </tr>
             <tr>
-                <th>洪旸</th>
+                <td>洪旸</td>
                 <td><input type="checkbox"/></td>
             </tr>
             <tr>
-                <th>朱彦頔</th>
+                <td>朱彦頔</td>
                 <td><input type="checkbox"/></td>
             </tr>
             <tr>
-                <th>高格格</th>
+                <td>高格格</td>
                 <td><input type="checkbox"/></td>
             </tr>
             <tr>
-                <th>郭昱璇</th>
+                <td>郭昱璇</td>
                 <td><input type="checkbox"/></td>
             </tr>
             <tr>
-                <th>张琬琦</th>
+                <td>张琬琦</td>
                 <td><input type="checkbox"/></td>
             </tr>
             <tr>
-                <th>周睿</th>
+                <td>周睿</td>
                 <td><input type="checkbox"/></td>
             </tr>
             <tr>
-                <th>任怡萌</th>
+                <td>任怡萌</td>
                 <td><input type="checkbox"/></td>
             </tr>
             <tr>
-                <th>王玙璠</th>
+                <td>王玙璠</td>
                 <td><input type="checkbox"/></td>
             </tr>
             <tr>
-                <th>吴昆</th>
+                <td>吴昆</td>
                 <td><input type="checkbox"/></td>
             </tr>
             <tr>
-                <th>替补1</th>
+                <td>替补1</td>
                 <td><input type="checkbox" checked="checked"/></td>
             </tr>
             <tr>
-                <th>替补2</th>
+                <td>替补2</td>
                 <td><input type="checkbox" checked="checked"/></td>
             </tr>
             </tbody>
